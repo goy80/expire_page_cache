@@ -13,4 +13,10 @@ module ExpirePageCache
       end
     end
   end
+
+  class Railtie < ::Rails::Railtie
+    rake_tasks do
+      load 'tasks/expire_page_cache.rake'
+    end
+  end
 end
