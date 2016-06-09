@@ -8,7 +8,7 @@ module ExpirePageCache
         stat = File::Stat.new(path)
         if(stat.file? &&  stat.mtime < DateTime.now - 1.day)
           File.delete(path)
-          Rails.logger.info "#{path} elapsed 24hour. remove it."
+          puts "[expire_page_cache] #{path} elapsed 24hour. remove it."
         end
       end
     end
